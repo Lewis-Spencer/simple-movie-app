@@ -6,7 +6,7 @@ import '../../App.css';
 
 function MyListMovies(props){  
 
-    const movies = css`
+    const moviesList = css`
         text-decoration: none;
         a{
             text-decoration:none; 
@@ -27,7 +27,7 @@ function MyListMovies(props){
         <div className='movie-app'>
             <div className='page-title'> -- My Movie List -- </div>
             <div className='container' css={css`padding-top: 10px;`}>
-                <div css={movies} className='flex movies'>
+                <div css={moviesList} className='flex movies'>
                     { myList !== null && myList.length > 0 ? 
                         myList.map((movie, index) => (
                         <div key={index} className='flex-item movie'>

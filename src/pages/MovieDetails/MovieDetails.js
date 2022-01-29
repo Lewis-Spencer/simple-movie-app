@@ -4,7 +4,8 @@ import { css, jsx } from '@emotion/react'
 import { Fragment, useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import '../../App.css';
-import { BallTriangle } from  'react-loader-spinner'
+import { BallTriangle } from  'react-loader-spinner';
+import axios from 'axios';
 
 function MovieDetails(props){  
     let location = useLocation();
@@ -18,8 +19,8 @@ function MovieDetails(props){
 	const getDetails = async (imdbID) => {
 		const url = `https://omdbapi.com/?type=movie&apikey=b5f20dd2&i=`+imdbID;
         setIsLoading(true);
-        const response = await fetch(url);
-        const responseJson = await response.json();
+        let response = await axios.get(url);
+        const responseJson = response.data;
 
         if (responseJson) {
             setDetails(responseJson);
