@@ -23,18 +23,20 @@ function App() {
     
 	useEffect(() => {
         getMovies(page);  
+        
+        const handleScroll = () => {   // check scroll reach bottom add page
+            let userScrollHeight = window.innerHeight + window.scrollY;
+            let windowBottomHeight = document.documentElement.offsetHeight;
+            if (userScrollHeight >= windowBottomHeight) {
+                page++;
+                getMovies(page);
+            }
+        };
+
+
         window.addEventListener("scroll", handleScroll);  // listen to window scroll
-	}, []);
-    
-    const handleScroll = () => {   // check scroll reach bottom add page
-        let userScrollHeight = window.innerHeight + window.scrollY;
-        let windowBottomHeight = document.documentElement.offsetHeight;
-        if (userScrollHeight >= windowBottomHeight) {
-            page++;
-            getMovies(page);
-        }
-    };
-    
+	}, [page]);
+
     return (
         <Layout>
             <Switch>

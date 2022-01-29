@@ -29,7 +29,7 @@ function MovieDetails(props){
     
 	useEffect(() => {
         getDetails(location.state[0].imdbID);  
-	}, []);
+	}, [location]);
 
 
     const movieExist = (myList, imdbID) => { // checking movie exist in list
@@ -44,6 +44,7 @@ function MovieDetails(props){
         }
         myList = myList.filter((list) => list.imdbID !== movie.imdbID);
         setMyList(myList);
+        console.log(stateMyList);
         localStorage.setItem('myList', JSON.stringify(myList));
         
         alert('Movie Removed from My List');
