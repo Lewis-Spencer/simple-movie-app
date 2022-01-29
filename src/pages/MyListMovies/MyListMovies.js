@@ -25,9 +25,7 @@ function MyListMovies(props){
     return (
         <div className='movie-app'>
             <div className='page-title'> -- My Movie List -- </div>
-            <div css={css`
-                        padding-top: 10px;
-                     `}>
+            <div className='container' css={css`padding-top: 10px;`}>
                 <div css={movies} className='flex movies'>
                     { myList !== null && myList.length > 0 ? 
                         myList.map((movie, index) => (

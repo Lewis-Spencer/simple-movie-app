@@ -23,7 +23,7 @@ function MovieList(props){
 	return (
         <div className='movie-app'>
             <div className='page-title'> -- Love is in the air -- </div>
-            <div className='row'>
+            <div className='container'>
                 <div css={movies} className='flex movies'>
                     {props.movies.map((movie, index) => (
                         <div key={index} className='flex-item movie'>
