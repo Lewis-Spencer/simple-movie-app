@@ -22,7 +22,7 @@ html{
 .flex{    
   display: flex;
   flex-wrap: wrap;    
-  justify-content: space-around;
+  justify-content: left;
 }
 .flex-center{
   align-items: center;
@@ -70,13 +70,16 @@ html{
   }
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 768px) {
   .flex .flex-item {
     flex-basis: 250px;
   }
+  .flex{       
+    justify-content: center;
+  }
 }
 
-@media only screen and (max-width: 3400px0) {
+@media only screen and (max-width: 340px) {
   .movie .poster {     
     height: auto;
   }
