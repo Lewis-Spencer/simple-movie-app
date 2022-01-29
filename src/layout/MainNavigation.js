@@ -3,6 +3,12 @@
 import { css, jsx } from '@emotion/react'
 import { NavLink } from 'react-router-dom';
 
+
+const breakpoints = [768]
+const media = breakpoints.map(
+    bp => `@media (min-width: ${bp}px)`
+)
+
 const menu = css`
     padding-bottom: 3px;    
     text-align: right;
@@ -25,6 +31,7 @@ const menu = css`
                 }
             }
         }
+        ${media[0]}{text-align:center}
     }
 `
 

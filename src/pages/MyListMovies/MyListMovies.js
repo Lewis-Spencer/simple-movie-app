@@ -9,7 +9,8 @@ function MyListMovies(props){
     const movies = css`
         text-decoration: none;
         a{
-            text-decoration:none;
+            text-decoration:none; 
+            color: black
         }
         .detail{
             padding:5px;
