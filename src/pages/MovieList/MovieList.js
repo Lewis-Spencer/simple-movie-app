@@ -5,6 +5,11 @@ import { Link } from 'react-router-dom';
 import '../../App.css';
 
 function MovieList(props){  
+    const breakpoints = [300, 576, 768]
+    const media = breakpoints.map(
+        bp => `@media (min-width: ${bp}px)`
+    )
+    
     const movies = css`
         text-decoration: none;
         a{
@@ -19,7 +24,7 @@ function MovieList(props){
             }
         }
     `
-    
+
 	return (
         <div className='movie-app'>
             <div className='page-title'> -- Love is in the air -- </div>

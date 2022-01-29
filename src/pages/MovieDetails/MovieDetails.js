@@ -33,9 +33,11 @@ function MovieDetails(props){
 
 
     const movieExist = (myList, imdbID) => { // checking movie exist in list
+        if(myList != null && myList.length > 0){ 
         return myList.some(function(el) {
             return el.imdbID === imdbID;
         }); 
+        }
     }
 
     const removeMyList = (movie) =>{ // handle remove from mylist
@@ -51,18 +53,26 @@ function MovieDetails(props){
     }
     
     const saveMyList = (movie) =>{ // handle save to mylist
+        console.log(myList);
         if(myList == null){ 
             myList = [];
-        }
-        
-        if(!movieExist(myList,movie.imdbID)){
             let detail = { Title: movie.Title, Poster: movie.Poster, imdbID: movie.imdbID, Type: movie.Type, Year: movie.Year };
-         
+            
             myList.push(detail);
             setMyList(myList);
             localStorage.setItem('myList', JSON.stringify(myList));   
 
             alert('Movie Added to My List');
+        }else{
+            if(!movieExist(myList,movie.imdbID)){
+                let detail = { Title: movie.Title, Poster: movie.Poster, imdbID: movie.imdbID, Type: movie.Type, Year: movie.Year };
+            
+                myList.push(detail);
+                setMyList(myList);
+                localStorage.setItem('myList', JSON.stringify(myList));   
+
+                alert('Movie Added to My List');
+            }
         }
     }
 

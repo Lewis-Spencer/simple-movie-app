@@ -59,6 +59,23 @@ html{
 .movie .year {float:right;}
 
 
+@media only screen and (max-width: 1024px) {
+  .movie .poster {     
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .flex .flex-item {
+    flex-basis: 250px;
+  }
+}
+
+@media only screen and (max-width: 3400px0) {
+  .movie .poster {     
+    height: auto;
+  }
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
