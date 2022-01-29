@@ -5,11 +5,6 @@ import { Link } from 'react-router-dom';
 import '../../App.css';
 
 function MovieList(props){  
-    const breakpoints = [300, 576, 768]
-    const media = breakpoints.map(
-        bp => `@media (min-width: ${bp}px)`
-    )
-    
     const movies = css`
         text-decoration: none;
         a{
