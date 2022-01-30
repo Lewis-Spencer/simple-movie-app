@@ -11,7 +11,7 @@ const media = breakpoints.map(
 
 const menu = css`
     padding-bottom: 3px;    
-    text-align: right;
+    text-align:center
     ul{ 
         margin: 0;
         padding-left: 25px;
@@ -31,7 +31,7 @@ const menu = css`
                 }
             }
         }
-        ${media[0]}{text-align:center}
+        ${media[0]}{text-align: right;}
     }
 `
 
