@@ -11,7 +11,7 @@ const media = breakpoints.map(
 
 const menu = css`
     padding-bottom: 3px;    
-    text-align:center
+    text-align:center;
     ul{ 
         margin: 0;
         padding-left: 25px;
